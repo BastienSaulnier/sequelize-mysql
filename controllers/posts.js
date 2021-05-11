@@ -1,4 +1,4 @@
-const { sequelize, Post, User_Post } = require("../models");
+const { Post, User_Post } = require("../models");
 
 const createPost = async (req, res) => {
   const { idUser, content } = req.body;
@@ -37,6 +37,7 @@ const getPostsByIdUser = async (req, res) => {
       where: {
         idUser: id,
       },
+      include: [{ model: Post }],
     });
 
     res.send(user_posts);
