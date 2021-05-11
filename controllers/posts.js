@@ -73,11 +73,6 @@ const updatePost = async (req, res) => {
 const deletePost = async (req, res) => {
   const { id } = req.params;
   try {
-    /* await User_Post.destroy({
-      where: {
-        idPost: id,
-      },
-    }); */
     await Post.destroy({
       where: {
         idPost: id,
