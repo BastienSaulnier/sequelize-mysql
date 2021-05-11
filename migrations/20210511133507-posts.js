@@ -1,5 +1,4 @@
 "use strict";
-const { User_Post } = require("../models");
 
 module.exports = {
   up: async (queryInterface, DataTypes) => {
