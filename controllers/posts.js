@@ -73,6 +73,11 @@ const updatePost = async (req, res) => {
 const deletePost = async (req, res) => {
   const { id } = req.params;
   try {
+    /* await User_Post.destroy({
+      where: {
+        idPost: id,
+      },
+    }); */
     await Post.destroy({
       where: {
         idPost: id,
@@ -81,6 +86,7 @@ const deletePost = async (req, res) => {
 
     return res.send("Post supprimé.");
   } catch (err) {
+    console.log(err);
     res.status(500).send("Erreur lors de la supression du post.");
   }
 };
